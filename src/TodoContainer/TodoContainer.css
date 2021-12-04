@@ -1,0 +1,26 @@
+.todo-container {
+  margin: 2em 0;
+}
+.todo-item:nth-child(1) {
+  border-radius: 5px 5px 0 0;
+}
+.todo-item {
+  border-bottom: 0.5px solid var(--Dark-Grayish-Blue);
+}
+
+.todo-container__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0.8em;
+  border-radius: 0 0 5px 5px;
+  background-color: var(--Very-Dark-Desaturated-Blue);
+  color: var(--Dark-Grayish-Blue);
+}
+
+.todo-clear {
+  cursor: pointer;
+}
+.todo-clear:hover {
+  color: white;
+}

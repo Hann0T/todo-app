@@ -1,0 +1,41 @@
+body {
+  color: white;
+}
+
+.container {
+  max-width: 1170px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.main-header {
+  height: 200px;
+  box-sizing: border-box;
+  padding-top: 3em;
+
+  background: url(../img/bg-mobile-dark.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.main-header > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle-theme__icon {
+  height: 26px;
+  width: 26px;
+}
+
+.middle-section {
+  position: relative;
+  bottom: 6em;
+}
+
+@media screen and (min-width: 1170px) {
+  .container {
+    padding: 0;
+  }
+}
