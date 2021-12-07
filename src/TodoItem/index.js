@@ -4,20 +4,20 @@ import crossIcon from '../img/icon-cross.svg';
 
 import './TodoItem.css';
 
-const TodoItem = (props) => {
+const TodoItem = ({ text, completed, onCompleteTodo, onDeleteTodo }) => {
   return (
-    <div className={'todo-item' + (props.completed ? ' completed' : '')}>
+    <div className={'todo-item' + (completed ? ' completed' : '')}>
       <button
         className='check-button'
         onClick={() => {
-          props.onCompleteTodo(props.text);
+          onCompleteTodo(text);
         }}
       ></button>
-      <p className='todo-text'>{props.text}</p>
+      <p className='todo-text'>{text}</p>
       <button
         className='delete-button'
         onClick={() => {
-          props.onDeleteTodo(props.text);
+          onDeleteTodo(text);
         }}
       >
         <img src={crossIcon} alt='cross' />

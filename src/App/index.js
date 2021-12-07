@@ -24,6 +24,8 @@ let todosContent = [
   },
 ];
 
+const TodoFilterState = ['all', 'active', 'completed'];
+
 const App = () => {
   const onCompleteTodo = (text) => {
     let todoIndex = todos.findIndex((todo) => todo.text === text);
@@ -31,6 +33,7 @@ const App = () => {
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
     setTodos(newTodos);
   };
+
   const onDeleteTodo = (text) => {
     let todoIndex = todos.findIndex((todo) => todo.text === text);
     let newTodos = [...todos];
@@ -39,10 +42,20 @@ const App = () => {
   };
 
   const [todos, setTodos] = useState(todosContent);
-  const [todosToShow, setTodosToShow] = useState(todos);
+  const [todosFilter, setTodosFilter] = useState('all');
 
   const leftTodos = todos.filter((todo) => !todo.completed).length;
   const completedTodos = todos.filter((todo) => todo.completed);
+
+  let todosToShow = [];
+
+  if (todosFilter === TodoFilterState[2]) {
+    todosToShow = todos.filter((todo) => todo.completed);
+  } else if (todosFilter === TodoFilterState[1]) {
+    todosToShow = todos.filter((todo) => !todo.completed);
+  } else {
+    todosToShow = [...todos];
+  }
 
   return (
     <React.Fragment>
@@ -79,11 +92,7 @@ const App = () => {
       </section>
       <footer className='main-footer'>
         <div className='container'>
-          <Filter
-            todos={todos}
-            todosToShow={todosToShow}
-            setTodosToShow={setTodosToShow}
-          />
+          <Filter todos={todos} setTodosFilter={setTodosFilter} />
         </div>
       </footer>
     </React.Fragment>

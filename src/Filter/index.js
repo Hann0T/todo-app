@@ -2,26 +2,9 @@ import React from 'react';
 
 import './Filter.css';
 
-const Filter = ({ todos, todosToShow, setTodosToShow }) => {
-  const All = (ev) => {
-    setTodosToShow(todos);
-
-    toggleActive(ev);
-  };
-
-  const Active = (ev) => {
-    let newTodos = [...todos];
-    newTodos = todos.filter((todo) => !todo.completed);
-    setTodosToShow(newTodos);
-
-    toggleActive(ev);
-  };
-
-  const Completed = (ev) => {
-    let newTodos = [...todos];
-    newTodos = todos.filter((todo) => todo.completed);
-    setTodosToShow(newTodos);
-
+const Filter = ({ todos, setTodosFilter }) => {
+  const onClickFilter = (ev) => {
+    setTodosFilter(ev.target.dataset.filter);
     toggleActive(ev);
   };
 
@@ -34,11 +17,15 @@ const Filter = ({ todos, todosToShow, setTodosToShow }) => {
 
   return (
     <div className='filter'>
-      <span className='filter-active' onClick={All}>
+      <span data-filter='all' className='filter-active' onClick={onClickFilter}>
         All
       </span>
-      <span onClick={Active}>Active</span>
-      <span onClick={Completed}>Completed</span>
+      <span data-filter='active' onClick={onClickFilter}>
+        Active
+      </span>
+      <span data-filter='completed' onClick={onClickFilter}>
+        Completed
+      </span>
     </div>
   );
 };

@@ -10,10 +10,12 @@ const CreateTodo = ({ setTodos, todos }) => {
   };
   const onKeyDown = (ev) => {
     if (ev.charCode !== 13) return;
+    if (!newTodoValue) return;
     onSubmit(ev);
   };
   const onSubmit = (ev) => {
     ev.preventDefault();
+    if (!newTodoValue) return;
     createTodo(ev, newTodoValue);
   };
   const createTodo = (ev, text) => {
