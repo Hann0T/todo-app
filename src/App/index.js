@@ -2,22 +2,7 @@ import React, { useState } from 'react';
 
 import AppUI from './AppUI';
 
-let todosContent = [
-  {
-    text: 'Complete online JavaScript course',
-    completed: true,
-  },
-  {
-    text: 'Jog around the park 3x',
-    completed: false,
-  },
-  {
-    text: '10 minutes meditation',
-    completed: false,
-  },
-];
-
-const TodoFilterState = ['all', 'active', 'completed'];
+import useLocalStorage from './LocalStorage';
 
 const App = () => {
   const onCompleteTodo = (text) => {
@@ -34,11 +19,11 @@ const App = () => {
     setTodos(newTodos);
   };
 
-  const [todos, setTodos] = useState(todosContent);
-  const [todosFilter, setTodosFilter] = useState('all');
+  const TodoFilterState = ['all', 'active', 'completed'];
 
-  const leftTodos = todos.filter((todo) => !todo.completed).length;
-  const completedTodos = todos.filter((todo) => todo.completed);
+  const [todos, setTodos] = useLocalStorage('TODOSv1', []);
+
+  const [todosFilter, setTodosFilter] = useState(TodoFilterState[0]);
 
   let todosToShow = [];
 
@@ -52,8 +37,6 @@ const App = () => {
 
   return (
     <AppUI
-      completedTodos={completedTodos}
-      leftTodos={leftTodos}
       todosToShow={todosToShow}
       todos={todos}
       setTodos={setTodos}
