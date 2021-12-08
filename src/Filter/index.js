@@ -9,10 +9,10 @@ const Filter = ({ todos, setTodosFilter }) => {
   };
 
   const toggleActive = (ev) => {
-    let toToggle = ev.target;
+    let elementToToggle = ev.target;
     let items = ev.target.parentElement.children;
     [...items].forEach((item) => item.classList.remove('filter-active'));
-    toToggle.classList.add('filter-active');
+    elementToToggle.classList.add('filter-active');
   };
 
   return (
