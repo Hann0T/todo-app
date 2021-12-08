@@ -2,13 +2,10 @@ import React from 'react';
 
 import './TodoContainer.css';
 
-const TodoContainer = ({
-  children,
-  leftTodos,
-  completedTodos,
-  todos,
-  setTodos,
-}) => {
+const TodoContainer = ({ children, todos, setTodos }) => {
+  const leftTodos = todos.filter((todo) => !todo.completed).length;
+  const completedTodos = todos.filter((todo) => todo.completed);
+
   const deleteCompletedTodos = () => {
     let newTodos = [...todos];
     completedTodos.forEach((completedTodo) => {
