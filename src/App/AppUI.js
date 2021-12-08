@@ -10,8 +10,6 @@ import toggleThemeIcon from '../img/icon-sun.svg';
 import './App.css';
 
 const AppUI = ({
-  completedTodos,
-  leftTodos,
   todosToShow,
   todos,
   setTodos,
@@ -34,12 +32,7 @@ const AppUI = ({
       <section className='middle-section'>
         <div className='container'>
           <CreateTodo setTodos={setTodos} todos={todos} />
-          <TodoContainer
-            completedTodos={completedTodos}
-            leftTodos={leftTodos}
-            todos={todos}
-            setTodos={setTodos}
-          >
+          <TodoContainer todos={todos} setTodos={setTodos}>
             {todosToShow.map((todo) => (
               <TodoItem
                 key={todo.text}
