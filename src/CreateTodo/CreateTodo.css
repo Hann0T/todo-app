@@ -5,8 +5,8 @@
   width: 100%;
   box-sizing: border-box;
   padding: 1em 3.5em;
-  background-color: var(--Very-Dark-Desaturated-Blue);
-  color: var(--Dark-Grayish-Blue);
+  background-color: var(--bg-color);
+  color: var(--text-color);
   border: none;
   border-radius: 5px;
 }
@@ -16,9 +16,9 @@
   top: 50%;
   width: 1.55em;
   height: 1.55em;
-  background-color: var(--Very-Dark-Desaturated-Blue);
-  color: var(--Dark-Grayish-Blue);
-  border: 1px solid var(--Dark-Grayish-Blue);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
   border-radius: 50%;
   transform: translateY(-50%);
   cursor: pointer;

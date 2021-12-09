@@ -1,11 +1,13 @@
 .todo-container {
   margin: 2em 0;
+  box-shadow: 0 10px 20px var(--shadow-color);
+  border-radius: 5px;
 }
 .todo-item:nth-child(1) {
   border-radius: 5px 5px 0 0;
 }
 .todo-item {
-  border-bottom: 0.5px solid var(--Dark-Grayish-Blue);
+  border-bottom: 0.5px solid var(--border-color);
 }
 
 .todo-container__footer {
@@ -14,8 +16,8 @@
   align-items: center;
   padding: 1em 0.8em;
   border-radius: 0 0 5px 5px;
-  background-color: var(--Very-Dark-Desaturated-Blue);
-  color: var(--Dark-Grayish-Blue);
+  background-color: var(--bg-color);
+  color: var(--text-second-color);
 }
 
 .todo-clear {

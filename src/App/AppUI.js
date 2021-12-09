@@ -4,8 +4,7 @@ import CreateTodo from '../CreateTodo';
 import TodoContainer from '../TodoContainer';
 import TodoItem from '../TodoItem';
 import Filter from '../Filter';
-
-import toggleThemeIcon from '../img/icon-sun.svg';
+import ThemeSwitcher from '../ThemeSwitcher';
 
 import './App.css';
 
@@ -21,12 +20,8 @@ const AppUI = ({
     <React.Fragment>
       <header className='main-header'>
         <div className='container'>
-          <h1>TODO</h1>
-          <img
-            src={toggleThemeIcon}
-            alt='toggle icon'
-            className='toggle-theme__icon'
-          />
+          <h1 className='main-header__title'>TODO</h1>
+          <ThemeSwitcher />
         </div>
       </header>
       <section className='middle-section'>

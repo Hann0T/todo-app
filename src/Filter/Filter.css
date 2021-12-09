@@ -6,8 +6,9 @@
   align-items: center;
   padding: 1em 0.8em;
   border-radius: 5px;
-  background-color: var(--Very-Dark-Desaturated-Blue);
-  color: var(--Dark-Grayish-Blue);
+  background-color: var(--bg-color);
+  color: var(--text-second-color);
+  box-shadow: 0 10px 20px var(--shadow-color);
 }
 
 .filter > span {
@@ -17,5 +18,15 @@
   color: white;
 }
 .filter-active {
-  color: skyblue;
+  color: var(--Bright-Blue);
+}
+
+@media screen and (min-width: 700px) {
+  .filter {
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc(11em + 3px);
+    box-shadow: none;
+  }
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import AppUI from './AppUI';
 
-import useLocalStorage from './LocalStorage';
+import useLocalStorage from '../Utils/LocalStorage';
 
 const App = () => {
   const onCompleteTodo = (text) => {

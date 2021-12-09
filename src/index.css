@@ -8,21 +8,21 @@
 }
 
 .dark-theme {
-  --Very-Dark-Blue: hsl(235, 21%, 11%);
-  --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
-  --Light-Grayish-Blue: hsl(234, 39%, 85%);
-  --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
-  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
-  --Very-Dark-Grayish-Blue-soft: hsl(233, 14%, 35%);
-  --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+  --body-bg-color: hsl(235, 21%, 11%);
+  --bg-color: hsl(235, 24%, 19%);
+  --text-color: hsl(234, 11%, 52%);
+  --text-second-color: hsl(236, 9%, 61%);
+  --border-color: hsl(234, 11%, 52%);
+  --shadow-color: none;
 }
 
 .light-theme {
-  --Very-Light-Gray: hsl(0, 0%, 98%);
-  --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
-  --Light-Grayish-Blue: hsl(233, 11%, 84%);
-  --Dark-Grayish-Blue: hsl(236, 9%, 61%);
-  --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+  --body-bg-color: white;
+  --bg-color: white;
+  --text-color: hsl(235, 19%, 35%);
+  --text-second-color: hsl(236, 9%, 61%);
+  --border-color: hsl(233, 11%, 84%);
+  --shadow-color: hsl(233, 11%, 84%);
 }
 
 * {
@@ -32,7 +32,7 @@
 body {
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
-  background-color: var(--Very-Dark-Blue);
+  background-color: var(--body-bg-color);
 }
 
 code {

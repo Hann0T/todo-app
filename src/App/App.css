@@ -3,7 +3,7 @@ body {
 }
 
 .container {
-  max-width: 1170px;
+  max-width: 700px;
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0 30px;
@@ -14,14 +14,29 @@ body {
   box-sizing: border-box;
   padding-top: 3em;
 
-  background: url(../img/bg-mobile-dark.jpg) no-repeat center;
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
+}
+.dark-theme .main-header {
+  background-image: url(../img/bg-mobile-dark.jpg);
+}
+.light-theme .main-header {
+  background-image: url(../img/bg-mobile-light.jpg);
 }
 
 .main-header > .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.main-header__title {
+  letter-spacing: 8px;
+}
+
+.toggle-theme {
+  cursor: pointer;
 }
 
 .toggle-theme__icon {
@@ -34,6 +49,14 @@ body {
   bottom: 6em;
 }
 
+@media screen and (min-width: 700px) {
+  .dark-theme .main-header {
+    background-image: url(../img/bg-desktop-dark.jpg);
+  }
+  .light-theme .main-header {
+    background-image: url(../img/bg-desktop-light.jpg);
+  }
+}
 @media screen and (min-width: 1170px) {
   .container {
     padding: 0;
