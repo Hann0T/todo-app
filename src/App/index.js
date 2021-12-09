@@ -5,6 +5,9 @@ import AppUI from './AppUI';
 import useLocalStorage from '../Utils/LocalStorage';
 
 const App = () => {
+  const displayMessage = () => {
+    alert('Crea tu primer TODO');
+  };
   const onCompleteTodo = (text) => {
     let todoIndex = todos.findIndex((todo) => todo.text === text);
     let newTodos = [...todos];
@@ -43,6 +46,7 @@ const App = () => {
       onCompleteTodo={onCompleteTodo}
       onDeleteTodo={onDeleteTodo}
       setTodosFilter={setTodosFilter}
+      displayMessage={displayMessage}
     />
   );
 };
