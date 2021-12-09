@@ -15,6 +15,7 @@ const AppUI = ({
   onCompleteTodo,
   onDeleteTodo,
   setTodosFilter,
+  displayMessage,
 }) => {
   return (
     <React.Fragment>
@@ -28,6 +29,14 @@ const AppUI = ({
         <div className='container'>
           <CreateTodo setTodos={setTodos} todos={todos} />
           <TodoContainer todos={todos} setTodos={setTodos}>
+            {todosToShow.length === 0 && (
+              <TodoItem
+                text={'Crea tu primer TODO'}
+                completed={false}
+                onCompleteTodo={displayMessage}
+                onDeleteTodo={displayMessage}
+              />
+            )}
             {todosToShow.map((todo) => (
               <TodoItem
                 key={todo.text}
