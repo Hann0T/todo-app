@@ -5,30 +5,31 @@ import useLocalStorage from '../Utils/LocalStorage';
 import darkThemeIcon from '../img/icon-sun.svg';
 import lightThemeIcon from '../img/icon-moon.svg';
 
+const themes = ['dark-theme', 'light-theme'];
+
 const ThemeSwitcher = () => {
-  const [theme, setTheme] = useLocalStorage('Theme', 'dark-theme');
+  const [theme, setTheme] = useLocalStorage('Theme', themes[0]);
 
   const onClick = () => {
-    if (theme === 'dark-theme') {
-      setTheme('light-theme');
+    if (theme === themes[0]) {
+      setTheme(themes[1]);
     } else {
-      setTheme('dark-theme');
+      setTheme(themes[0]);
     }
   };
 
   const changeTheme = () => {
+    body.classList.remove(...body.classList);
     body.classList.add(theme);
-    body.dataset.theme = theme;
   };
 
   const body = document.querySelector('body');
-  body.classList.remove(...body.classList);
   changeTheme();
 
   return (
     <span className='toggle-theme' onClick={onClick}>
       <img
-        src={theme === 'dark-theme' ? darkThemeIcon : lightThemeIcon}
+        src={theme === themes[0] ? darkThemeIcon : lightThemeIcon}
         alt='toggle icon'
         className='toggle-theme__icon'
       />
