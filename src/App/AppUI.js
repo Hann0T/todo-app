@@ -29,7 +29,7 @@ const AppUI = ({
         <div className='container'>
           <CreateTodo setTodos={setTodos} todos={todos} />
           <TodoContainer todos={todos} setTodos={setTodos}>
-            {todosToShow.length === 0 && (
+            {todos.length === 0 && (
               <TodoItem
                 text={'Crea tu primer TODO'}
                 completed={false}
